@@ -22,16 +22,17 @@ Install dependencies
 npm i
 ```
 
-webpack
-```
-./node_modules/.bin/webpack --mode development
-```
-
 Watch the cljs code
 
 ```
 ./node_modules/.bin/shadow-cljs watch main
 ```
+
+webpack
+```
+./node_modules/.bin/webpack --mode development
+```
+
 
 Visit [http://localhost:8000](https://github.com/nbd-wtf/nostr-tools)
 

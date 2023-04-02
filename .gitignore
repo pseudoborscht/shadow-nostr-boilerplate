@@ -4,6 +4,7 @@ public/js
 /target/dist
 /target/shadow-builds
 /target/nostr.cjs.js
+/target/index.js
 /checkouts
 /src/gen
 

@@ -3,7 +3,7 @@
   (:require [cljs.core.async :as async :refer [<! >! put! chan]]
             ["nostr-tools" :as nostr]))
 
-(def sk (nostr/generatePrivateKey)
+(def sk (nostr/generatePrivateKey))
 
 (def pub-key
   (nostr/getPublicKey sk))
@@ -72,5 +72,4 @@
                          (when (= (.-key event) "Enter")
                            (.preventDefault event)
                            (dispatch-message (.-value input)))))
-    (.appendChild js/document.body input))
-  )
+    (.appendChild js/document.body input)))
