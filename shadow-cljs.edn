@@ -1,0 +1,39 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :nrepl
+ {:port 8202
+  :init-ns shadow-boilerplate.shadow-repl}
+
+ :dev-http {8000 "target"}
+
+ :dependencies
+ []
+
+ :builds
+ {:main
+  {:target :browser
+   :js-options {:js-provider :external
+                  :external-index "target/index.js"}
+   #_#_:open-file-command
+   ["emacsclient" "-n" ["+%s:%s" :line :column] :file]
+   :modules {:main {:init-fn shadow-boilerplate.core/init}}
+   :dev {:output-dir "target/shadow-builds/public/main/js"
+         :asset-path "/main/js"
+
+         :compiler-options  {:cross-chunk-method-motion false
+                             ;;:source-map true
+                             ;;:rewrite-polyfills true
+                             ;;:ouput-feature-set :es3
+                             ;;:pseudo-names true
+                             ;;:pretty-print  true
+                             }}
+   :release {:output-dir "public/js"
+             :asset-path "js"
+             :compiler-options  {:optimizations :advanced
+                                 :rewrite-polyfills true
+                                 :ouput-feature-set :es3
+                                 :cross-chunk-method-motion false}}}}}

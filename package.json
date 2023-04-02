@@ -1,0 +1,16 @@
+{
+    "name": "shadow-boilerplate",
+    "version": "0.0.1",
+    "private": true,
+    "devDependencies": {
+        "shadow-cljs": "2.22.9",
+        "webpack": "^5.77.0",
+        "webpack-cli": "^5.0.1",
+        "@babel/preset-env": "^7.21.4",
+        "babel-loader": "^9.1.2"
+
+    },
+    "dependencies": {
+        "nostr-tools": "^1.8.1"
+    }
+}

@@ -1,0 +1,37 @@
+(ns shadow-boilerplate.shadow-repl
+  (:require
+   [shadow.cljs.devtools.server :as server]
+   [shadow.cljs.devtools.api :as shadow]
+   [shadow.cljs.devtools.cli]))
+
+
+(defn watch-main []
+  (shadow/watch :main {:verbose true}))
+
+(defn stop-main []
+  (shadow/stop-worker :main))
+
+(defn release-main []
+  (shadow/release :main {:verbose true}))
+
+
+(defn compile-main []
+  (shadow/compile :main {:verbose true}))
+
+(defn cljs-repl
+  ([]
+   (cljs-repl :main))
+  ([build-id]
+   (shadow/watch build-id {:verbose true})
+   (shadow/nrepl-select build-id)))
+
+#_(server/start!)
+
+(comment
+ (watch-main)
+  (release-main)
+  (shadow/nrepl-select :main)
+  (stop-main)
+
+  (compile-main)
+  )
